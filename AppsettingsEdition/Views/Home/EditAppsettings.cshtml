@@ -1,0 +1,14 @@
+﻿@model EditAppsettingsViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <form asp-action="EditAppsettings" method="post">
+        <input type="hidden" asp-for="OldValue" value="@Model.OldValue" />
+        <div class="validation" asp-validation-summary="All"></div>
+        <textarea style="width:1000px;height:1000px;" name="NewValue">@Model.OldValue</textarea>
+        <button type="submit">Сохранить</button>
+    </form>
+</div>
